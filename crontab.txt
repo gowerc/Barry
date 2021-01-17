@@ -1,0 +1,21 @@
+
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# m h  dom mon dow   command
+
+
+# To install this cronfile run:
+#      crontab  crontab.txt
+
+ 59 23 1,15     * *    ~/Barry/run_script.sh  ~/Barry/scripts/sync_hdd_to_hdd2.py 
+ 59 23 10,25    * *    ~/Barry/run_script.sh  ~/Barry/scripts/sync_hdd2_to_remote.py 
+ 59  7 5,27     * *    ~/Barry/run_script.sh  ~/Barry/scripts/usage_report.py 
+ 59  7 20       * *    ~/Barry/run_script.sh  ~/Barry/scripts/sync_github.py
+ 
