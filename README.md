@@ -156,7 +156,7 @@ sudo e2label /dev/sda HomeBackup
 ```
 
 
-### Manual Moiunting
+### Manual Mounting
 
 ```
 sudo mount /dev/sdb1 /media/hdd2

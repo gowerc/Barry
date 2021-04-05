@@ -3,3 +3,5 @@ secrets/*
 temp/*
 logs/*
 venv
+!.gitkeep
+.vscode
