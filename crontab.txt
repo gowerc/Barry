@@ -14,8 +14,8 @@
 # To install this cronfile run:
 #      crontab  crontab.txt
 
- 59 23 1,15     * *    ~/Barry/run_script.sh  ~/Barry/scripts/sync_hdd_to_hdd2.py 
- 59 23 10,25    * *    ~/Barry/run_script.sh  ~/Barry/scripts/sync_hdd2_to_remote.py 
- 59  7 6,27     * *    ~/Barry/run_script.sh  ~/Barry/scripts/usage_report.py 
- 59  7 20       * *    ~/Barry/run_script.sh  ~/Barry/scripts/sync_github.py
+ 59 23 1,15     * *    ~/Barry/Barry.sh  sync_hdd_to_hdd2
+ 59 23 10,25    * *    ~/Barry/Barry.sh  sync_hdd2_to_remote
+ 59  7 6,27     * *    ~/Barry/Barry.sh  usage_report
+ 59  7 20       * *    ~/Barry/Barry.sh  sync_github
  
