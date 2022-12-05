@@ -175,34 +175,6 @@ https://ma.juii.net/blog/interpret-smart-attributes
 
 
 
-## Rsync
-
-### Options
-
--n  =  Dry run,  do not sync any files  
--v = verbose  
--h = human readable numbers  
--a  = recursive syncing + preseve lots of propertys of the file including modification times and permissions)  
--P  = combines the flags --progress and --partial. The former gives you a progress bar for the transfers and the latter allows you to resume interrupted transfers  
---delete = By default rsync will not delete files this flag will remove files from the target directory that aren't in the source directory  
---exclude = used to exclude specific files (pattern based) or sub directory, include the flag multiple times for multiple exclusions  
---backup-dir = directory to put any files that are deleted or overwritten  
---suffix = a Suffix to give to files placed into backup (i.e. date or some indicator)  
---bwlimit = file transfer limit in KB/s
-
-
-### Misc notes
-
-- always use trailing /  !!!   i.e.  rsync  dir1/  dir2/   If you don't it will attempt to put dir1 itself inside of dir2  i.e.   dir2/dir1/
-- When transfering full speed the disk IO gets consumed and the samba access fails (best to set backup rysnc to be overnight) 
-
-### Examples
-
-```
-rsync -ahP  --delete --backup  --backup-dir="/media/hdd2/backup/backup_$(date +\%Y-\%m-\%d)"  /media/hdd/content/ /media/hdd2/content/ |& tee /tmp/logfile_$(date +\%Y-\%m-\%d).txt
-```
-
-
 ## Auto runninng - cron
 
 The cron tool allows us to schedule code to be executed on a scheduled basis
@@ -239,23 +211,6 @@ day of week = 1-7
 * Use `5-10` to specify a span of units  
 
 
-## rclone - Remote Syncing
-
-Use the utility rclone to sync files between our local drive and a cloud drive (in this case hdd2 -> gdrive) 
-
-Best explained via the online documentation:
-https://rclone.org/commands/
-
-
-Typical usage for syncing:
-```
-rclone sync /local/path/to/sync/  REMOTE_TAG:<directory>
-```
-
-In our case
-```
-rclone sync /media/hdd2/content/  RPI_backup:
-```
 
 
 
