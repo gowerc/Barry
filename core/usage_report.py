@@ -10,3 +10,9 @@ def main(secrets):
         success=x.returncode == 0,
         subject="Usage Report"
     )
+
+# Start a test
+# sudo smartctl -t short  -a /dev/sda
+
+# Get test result
+# sudo smartctl -l selftest /dev/sda
